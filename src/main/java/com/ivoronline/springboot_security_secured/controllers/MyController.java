@@ -7,15 +7,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyController {
 
+  //===================================================================================
+  // USER GUEST
+  //===================================================================================
   @Secured({"ROLE_USER", "ROLE_GUEST"})
-  @RequestMapping("/UserGuest")
-  public String userGuest() {
+  @RequestMapping("UserGuest")
+   String userGuest() {
     return "Hello from UserGuest";
   }
 
+  //===================================================================================
+  // ADMIN
+  //===================================================================================
   @Secured("ROLE_ADMIN")
-  @RequestMapping("/Admin")
-  public String admin() {
+  @RequestMapping("Admin")
+   String admin() {
     return "Hello from Admin";
   }
 
